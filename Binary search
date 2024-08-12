@@ -1,0 +1,24 @@
+704.Given an array of integers nums which is sorted in ascending order, and an integer target, 
+write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+You must write an algorithm with O(log n) runtime complexity.
+
+#Array should be in sorted order.
+https://leetcode.com/problems/binary-search/submissions/1353362872
+#code begins
+
+class Solution {
+public:
+    int binarysearch(vector<int>& nums, int target) {
+        int n=nums.size();
+        int start=0,end=n-1,mid=0;
+        while(start<= end)
+        {   mid=start + (end -start)/2;
+            if(nums[mid]==target)return mid;
+            else if(nums[mid]<target) start=mid+1;
+            else end=mid-1;
+        }
+        return -1;
+
+        
+    }
+};
