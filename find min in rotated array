@@ -1,0 +1,26 @@
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1358044920
+/*
+idea - if rotated then array is divided in 2 different part increasing one and make a array then rotate in till original one we get then observe that 
+if arr[0] > mid element move left and store that index and else move right.
+*/
+
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int start=0,end=nums.size()-1,mid=-1,index= 0;
+        while(start<=end)
+        {
+            mid=start +(end - start)/2;
+            if(nums[mid]<nums[0])
+            {
+               index =mid; 
+               end=mid-1;
+            }
+            else
+            {
+                start=mid+1;
+            }
+        }
+        return nums[index];
+    }
+};
