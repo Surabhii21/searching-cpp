@@ -1,0 +1,12 @@
+https://leetcode.com/problems/power-of-three/submissions/1368037471
+
+class Solution {
+public:
+    bool isPowerOfThree(int n) 
+    {
+    if (n <= 0)
+      return false;
+    int upperLimit = pow(3, 19);
+    return (upperLimit % n == 0);
+}
+};
